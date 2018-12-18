@@ -70,10 +70,17 @@ barplot(table(nc$Best.n[1,]),
 # Exercise 5: using the table() function, show how the clusters in fit.km$clusters
 # compares to the actual wine types in wine$Type. Would you consider this a good
 # clustering?
-
-
+ ct.km <- table(wine$Type, fit.km$cluster)
+ ct.km
+  
 # Exercise 6:
 # * Visualize these clusters using  function clusplot() from the cluster library
 # * Would you consider this a good clustering?
+ 
+ ##install.packages("flexclust") 
+ library(flexclust)
+ randIndex(ct.km)
 
+##install.packages("cluster")
+ 
 #clusplot( ... )
