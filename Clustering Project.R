@@ -54,12 +54,16 @@ barplot(table(nc$Best.n[1,]),
 
 # Exercise 3: How many clusters does this method suggest?
 
+##This model suggests the best number of clusters is 3.
 
 # Exercise 4: Once you've picked the number of clusters, run k-means 
 # using this number of clusters. Output the result of calling kmeans()
 # into a variable fit.km
 
-# fit.km <- kmeans( ... )
+ fit.km <- kmeans(df, 3)
+ fit.km$size
+ fit.km$centers
+ aggregate(wine[-1], by=list(cluster=fit.km$cluster), mean)
 
 # Now we want to evaluate how well this clustering does.
 
